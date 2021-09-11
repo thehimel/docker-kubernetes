@@ -10,11 +10,15 @@ docker build .
 sudo docker ps -a
 
 # Run the container
-docker run container_id
+docker run image_id
 
 # Stop a container
 docker stop container_name
 
 # Remove a container
 sudo docker rm container_id
+
+# Remove an image
+sudo docker rmi image_id
 ```
+

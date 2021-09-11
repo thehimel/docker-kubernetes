@@ -9,11 +9,12 @@ This container prints "Hello, world!" wich magenta color using rich.
 sudo docker build .
 
 # Interactive terminal to see the color.
-sudo docker run -it container_id
+sudo docker run -it image_id
 
 # Interactive terminal with bash
-sudo docker run -it container_id /bin/bash
+sudo docker run -it image_id /bin/bash
 
 # Remove all stopped containers
 sudo docker container prune
 ```
+ 

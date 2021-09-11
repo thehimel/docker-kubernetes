@@ -21,3 +21,17 @@ CMD ["ptyhon", "script.py"]
 
 - RUN is executed once during the creation of the image.
 - CMD is executed everytime the container starts.
+
+## 6 Run Container from Image
+
+#### Publish Ports
+
+```dockerfile
+# Run the service on PORT 80 of the container.
+EXPOSE 80
+```
+
+```sh
+# p=publish | HOST_PORT:CONTAINER_PORT
+docker run -p 3000:80 image_id
+```
