@@ -36,3 +36,13 @@ EXPOSE 80
 # p=publish | HOST_PORT:CONTAINER_PORT
 docker run -p 3000:80 image_id
 ```
+
+## 8 Image Layers
+
+- For every line of instruction mentioned in the Dockerfile, an image is created.
+This is referred as the layered architecture of the image.
+- An image is created and cached at every step. If no change is detected,
+the cached version will be used during the re-creation of the image from the Dockerfile.
+- For optimization, we copy the dependency file that doesn't often change, install it, and then copy the source code
+and tests. Thus, a cached image is created after the installation of the dependencies. And when we change the source
+code, the cached version of the dependency installation image can be used. It makes the execution faster.
