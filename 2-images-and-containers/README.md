@@ -21,6 +21,7 @@ CMD ["ptyhon", "script.py"]
 
 - RUN is executed once during the creation of the image.
 - CMD is executed everytime the container starts.
+- CMD is generally the last line of a Dockerfile.
 
 ## 6 Run Container from Image
 
