@@ -15,9 +15,9 @@ sudo docker run -it python
 ### RUN vs. CMD
 
 ```sh
-RUN pip install -r /app/requirements.txt
+RUN pip install -r /src/requirements-dev.txt
 CMD ["ptyhon", "script.py"]
 ```
 
-- RUN is executed once the container is created.
+- RUN is executed once during the creation of the image.
 - CMD is executed everytime the container starts.

@@ -5,8 +5,15 @@ This container prints "Hello, world!" wich magenta color using rich.
 ## Commands
 
 ```sh
-sudo docker build src
+# Build an image from the Dockerfile
+sudo docker build .
 
-# Interactive terminal is needed to see the color.
+# Interactive terminal to see the color.
 sudo docker run -it container_id
+
+# Interactive terminal with bash
+sudo docker run -it container_id /bin/bash
+
+# Remove all stopped containers
+sudo docker container prune
 ```
