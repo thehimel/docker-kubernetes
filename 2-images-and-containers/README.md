@@ -128,3 +128,12 @@ sudo docker rmi image1 image2
 # Remove all unused images
 sudo docker image prune
 ```
+
+## 15 Remove Stopped Containers
+
+```sh
+# Automatically remove the container when it exists with --rm.
+sudo docker run --rm image_name
+```
+
+## 16 Inspecting Images
