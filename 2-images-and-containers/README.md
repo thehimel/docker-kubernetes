@@ -46,3 +46,16 @@ the cached version will be used during the re-creation of the image from the Doc
 - For optimization, we copy the dependency file that doesn't often change, install it, and then copy the source code
 and tests. Thus, a cached image is created after the installation of the dependencies. And when we change the source
 code, the cached version of the dependency installation image can be used. It makes the execution faster.
+
+## 11 Restart Containers
+
+```sh
+# List all containers including the stopped containers.
+sudo docker ps -a
+
+# Restart a stopped container
+sudo docker start container_name
+
+# Stop a running container
+sudo docker stop container_name
+```
