@@ -59,3 +59,27 @@ sudo docker start container_name
 # Stop a running container
 sudo docker stop container_name
 ```
+
+## 12 Attached and Detached Containers
+
+- Attached Mode: Runs the container in foreground.
+- Detached Mode: Runs the container in background.
+- When we run a container, it executes in attached mode by default.
+- When we restart a container, it executes in detached mode by default.
+
+```sh
+# Run a container in detached mode.
+sudo docker run -d -p 5000:5000 docker-flask
+
+# Attach a detached container.
+sudo docker container attach container_id_or_name
+
+# Restart a container in attached mode.
+sudo docker start -a container_id_or_name
+
+# Print the logs of a detached container
+sudo docker logs container_id_or_name
+
+# Follow log output of a detached container
+sudo docker logs -f container_id_or_name
+```
