@@ -103,3 +103,28 @@ sudo docker start -a container_id_or_name
 ```
 
 - The above command does not allow entering inputs as it is just meant to attach the container.
+
+## 14 Delete Images and Containers
+
+- We can only remove a stopped container.
+- We can only remove an image if it is not used by any stopped or running container.
+
+```sh
+# Remove a container
+sudo docker rm container_name_or_id
+
+# Remove multiple container
+sudo docker rm container1 container2 container3
+
+# Remove all stopped containers
+sudo docker prune
+
+# Remove an unused image
+sudo docker rmi image_name_or_id
+
+# Remove multiple unused images
+sudo docker rmi image1 image2
+
+# Remove all unused images
+sudo docker image prune
+```
