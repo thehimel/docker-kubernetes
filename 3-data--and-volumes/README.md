@@ -19,3 +19,5 @@ Kinds of Data
     - Persists even after the container exists.
     - `sudo docker run -v local_path:container_path image_name`
     - `sudo docker run -v feedback:/app/feedback image_name`
+
+- TODO: Test the commands
