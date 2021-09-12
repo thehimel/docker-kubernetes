@@ -180,7 +180,7 @@ docker cp container_name:/condir/file.txt mydir
 sudo docker build --tag image_name .
 sudo docker build -t image_name:1.0.0 .
 
-# This will just create another image with the new tag. This will not go through the build process again.
+# This will just clone the image with a new tag. This will not go through the build process again.
 # Removing image_name:1.0.0 will not remove image_name:2.0.0.
 sudo docker tag image_name:1.0.0 image_name:2.0.0
 
@@ -190,4 +190,26 @@ sudo docker run --name my_container image_name:1.0.0
 
 # Run a container with name in interactive terminal mode and remove automatically after it exists.
 sudo docker run --rm -it --name my_container image_name
+```
+
+## 22 Push Images to DockerHub
+
+- Every image pushed to docker hub is stored in a repository.
+- During the push, if the image depends on another image, docker recognized that, and pushes only the extra part.
+  - For example, if an image depends on python, it won't push the files of the python image.
+
+```sh
+sudo docker login
+sudo docker logout
+
+# Clone an image with a new tag
+sudo docker tag image_name:1.0.0 username/repo_name:tag
+sudo docker tag python-flask:1.0.0 universe/world:1.0.0
+
+# Push image to Docker Hub
+sudo docker push image_name
+sudo docker push universe/world:1.0.0
+
+# Push ro Private Repository
+sudo docker push host:name
 ```
