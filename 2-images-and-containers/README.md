@@ -22,6 +22,7 @@ CMD ["ptyhon", "script.py"]
 - RUN is executed once during the creation of the image.
 - CMD is executed everytime the container starts.
 - CMD is generally the last line of a Dockerfile.
+- If no ENTRYPOINT is defined, CMD is the ENTRYPOINT.
 
 ## 6 Run Container from Image
 
@@ -136,4 +137,14 @@ sudo docker image prune
 sudo docker run --rm image_name
 ```
 
-## 16 Inspecting Images
+## 16 Inspect Images
+
+Inspect an image to get various information such as id, date_created, working_dir, entrypoint, author, os, layers, etc.
+
+```sh
+# Inspect an image
+sudo docker image inspect image_name
+
+# Inspect the python image
+sudo docker image inspect python
+```
