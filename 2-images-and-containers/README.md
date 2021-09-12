@@ -213,3 +213,15 @@ sudo docker push universe/world:1.0.0
 # Push ro Private Repository
 sudo docker push host:name
 ```
+
+## 23 Pull and Use Shared Images
+
+- Every pull request will update the image from remote if a newer version is found.
+- Run doesn't look for the update. It just creates a container from the locally stored image.
+If the image is not found locally, it pulls the image automatically.
+
+```sh
+sudo docker pull username/repo_name:tag
+sudo docker pull universe/world:1.0.0
+sudo docker pull python:3.8
+```
