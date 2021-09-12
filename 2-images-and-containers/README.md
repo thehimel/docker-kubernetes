@@ -87,6 +87,8 @@ sudo docker logs -f container_id_or_name
 
 ## 13 Enter Interactive Mode
 
+Used for mostly utility apps. Not recommended for web apps.
+
 ### Commands
 
 ```sh
@@ -148,3 +150,21 @@ sudo docker image inspect image_name
 # Inspect the python image
 sudo docker image inspect python
 ```
+
+## 17 Copy Files
+
+```sh
+# Copy a directory from local machine to the container
+docker cp mydir container_name:/condir
+
+# Copy a file from local machine to the container
+docker cp mydir/file.txt container_name:/condir
+
+# Copy a directory from container to the local machine
+docker cp container_name:/condir mydir
+
+# Copy a file from container to the local machine
+docker cp container_name:/condir/file.txt mydir
+```
+
+- Note: A file that is being executed cannot be replaced.
