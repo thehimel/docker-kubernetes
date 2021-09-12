@@ -128,8 +128,11 @@ sudo docker rmi image_name_or_id
 # Remove multiple unused images
 sudo docker rmi image1 image2
 
-# Remove all unused images
+# Remove all unused untagged images
 sudo docker image prune
+
+# Remove all unused images included tagged images
+sudo docker image prune -a
 ```
 
 ## 15 Remove Stopped Containers
@@ -168,3 +171,23 @@ docker cp container_name:/condir/file.txt mydir
 ```
 
 - Note: A file that is being executed cannot be replaced.
+
+## 18 Naming and Tagging
+
+```sh
+
+# Create an image with name:tag
+sudo docker build --tag image_name .
+sudo docker build -t image_name:1.0.0 .
+
+# This will just create another image with the new tag. This will not go through the build process again.
+# Removing image_name:1.0.0 will not remove image_name:2.0.0.
+sudo docker tag image_name:1.0.0 image_name:2.0.0
+
+# Run a container with name. By default looks for latest tag if tag is undefined.
+sudo docker run --name my_container image_name
+sudo docker run --name my_container image_name:1.0.0
+
+# Run a container with name in interactive terminal mode and remove automatically after it exists.
+sudo docker run --rm -it --name my_container image_name
+```

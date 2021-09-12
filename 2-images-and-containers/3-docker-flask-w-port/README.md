@@ -3,7 +3,7 @@
 ## Commands
 
 ```sh
-sudo docker build . -t docker-flask
+sudo docker build -t docker-flask .
 sudo docker run -d -p 5000:5000 docker-flask
 ```
 

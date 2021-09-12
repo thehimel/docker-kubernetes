@@ -3,7 +3,7 @@
 ## Commands
 
 ```sh
-sudo docker build . -t image_name
+sudo docker build -t image_name .
 
 # Run the container with interactive terminal mode.
 sudo docker run -it image_name
