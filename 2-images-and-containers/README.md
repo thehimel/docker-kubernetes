@@ -83,3 +83,23 @@ sudo docker logs container_id_or_name
 # Follow log output of a detached container
 sudo docker logs -f container_id_or_name
 ```
+
+## 13 Enter Interactive Mode
+
+### Commands
+
+```sh
+# Run the container with interactive terminal mode.
+sudo docker run -it image_name
+
+# Restart the container with attached and interactive mode.
+sudo docker start -ai container_id_or_name
+```
+
+### Note
+
+```sh
+sudo docker start -a container_id_or_name
+```
+
+- The above command does not allow entering inputs as it is just meant to attach the container.
