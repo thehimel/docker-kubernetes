@@ -15,8 +15,10 @@ Kinds of Data
   - Anonymous (Non-Persistent)
     - Automatically gets removed from the local machine when container exists.
     - Docker sets a path on the host machine. Exact location is unknown.
-
   - Named (Persistent)
     - Persists even after the container exists.
     - `sudo docker run -v local_path:container_path image_name`
     - `sudo docker run -v feedback:/app/feedback image_name`
+
+## 9 Bind Mounts
+
