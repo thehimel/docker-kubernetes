@@ -13,11 +13,11 @@ Kinds of Data
 - Can be managed with `docker volume`. Parameters: `ls` = list, `rm` = remove, `prune` = remove all unused volumes.
 - Volume Types
   - Anonymous (Non-Persistent)
-    - Automatically gets removed from the local machine when container exists.
-    - Docker sets a path on the host machine. Exact location is unknown.
+    - Automatically gets removed from the local machine when container exits.
+    - Docker sets a path on the host machine which is deleted when container exits. Exact location is unknown.
   - Named (Persistent)
-    - Persists even after the container exists.
-    - A directory is created inside the container.
+    - Persists even after the container exits.
+    - A directory is created inside the container which is not deleted when container exits.
     - Make sure that the directory or the parent of the directory in local machine is accessible by Docker.
     - `sudo docker run -v local_path:container_path image_name`
     - `sudo docker run -v feedback:/app/feedback image_name`
